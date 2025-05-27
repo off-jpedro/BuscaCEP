@@ -1,0 +1,24 @@
+<div style="max-width: 1000px; margin: 2rem auto;">
+  <mat-card>
+
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label style="font-size: 1.5rem;">Digite o CEP</mat-label>
+      <input matInput [(ngModel)]="cep" maxlength="8"
+             style="font-size: 1.5rem; height: 3rem;" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" style="width: 100%; font-size: 1.1rem;" (click)="buscar()">
+      Buscar
+    </button>
+
+    <div *ngIf="endereco" style="margin-top: 2rem;">
+      <mat-card>
+        <p style="font-size: 1.6rem;"><strong>Logradouro:</strong> {{ endereco.logradouro }}</p>
+        <p style="font-size: 1.6rem; margin-top: 1rem;"><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+        <p style="font-size: 1.6rem; margin-top: 1rem;"><strong>Cidade:</strong> {{ endereco.localidade }}</p>
+        <p style="font-size: 1.6rem; margin-top: 1rem;"><strong>UF:</strong> {{ endereco.uf }}</p>
+      </mat-card>
+    </div>
+
+  </mat-card>
+</div>
